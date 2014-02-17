@@ -12,8 +12,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "template"
   config.vm.provision "puppet"
   config.vm.network :private_network, ip: IP
-  config.vm.network "forwarded_port", guest: 80, host: 8080,auto_correct: true
-  config.vm.synced_folder "app/", "/var/www/html", nfs: true
+  config.vm.network "forwarded_port", guest: 80, host: 8070,auto_correct: true
+  config.vm.synced_folder "htdocs/", "/var/www/html", nfs: true
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/centos-64-x64-vbox4210.box"
   config.vm.provision "shell", inline: "echo Ready to serve pages at: http://#{IP}"
   config.vm.provision "shell", inline: "echo A local mysql database named app is available, manage it with phpMyAdmin on http://#{IP}/phpMyAdmin."
