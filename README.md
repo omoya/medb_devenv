@@ -2,7 +2,7 @@ vagrant-centos64-lamp
 =====================
 
 A ready-to-use vagrant template of a Centos 6.4 LAMP server for running
-PHP applications like Drupal.
+PHP applications.
 
 What is this exactly?
 =====================
@@ -12,17 +12,22 @@ password: NULL).
 
 Usage
 =====
-1. Install vagrant and virtualbox.
-2. Edit the Vagrantfile and set a unique private IP address and a
-   hostname for this VM.   
-3. Create the app/ directory. Thes contents of this directory will
-   served from /var/www/html in the VM and from localhost:8070 in
+1. Install vagrant
+2. Install Virtual box
+3. Install GIT.
+4. (If you work on windows) Include the '...\Git\bin' folder in the PATH
+   environment variable where '...' is the route where you installed GIT
+5. Create the folder where you want to save the project.
+6. Open the console and cd to this folder
+7. Run 'git clone https://github.com/omoya/medb_devenv.git'
+8. cd into the 'medb_devenv' folder
+9. Run 'vagrant up'
+10. You will see an app/ directory. The contents of this directory will
+   be served from /var/www/html in the VM and from localhost:8070 in
    the host machine.
-4. Run `vagrant up`.
-5. There will be an NFS error on the first boot. Ignore it and run
-   `vagrant provision`, then `vagrant reload`. You have to do this
-   only once.
-6. Place your application files in app/.
-7. Read the output from `vagrant provision` on where to point your
-   browser.
-8. (Optional) Add /etc/hosts entries pointing at the VM's IP.
+
+ If you are able to see a welcome message at localhost:8070, it means
+ that you installed successfully the development environment.
+ 
+ The '/app' folder is the equivalent to the '/htdocs' folder in XAMPP.
+ You can copy html or PHP files to run them from localhost:8070
